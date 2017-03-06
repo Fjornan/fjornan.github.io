@@ -1,0 +1,1 @@
+function hello(){var o="hello,world";document.open(),document.write(o),document.close()}
