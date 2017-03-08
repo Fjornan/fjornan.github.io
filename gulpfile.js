@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),//提示error
     plumber = require('gulp-plumber'),//出错后不停止
     autoprefixer = require('gulp-autoprefixer'),//自动加上浏览器前缀，如-webkit，-ms
-    livereload = require('gulp-livereload');//自动刷新浏览器，需安装liverload插件
+    livereload = require('gulp-livereload'),//自动刷新浏览器，需安装liverload插件
     uglify = require('gulp-uglify');
 
 gulp.task('less', function() {
