@@ -45,6 +45,8 @@
   function loading(){
   	if(document.readyState == "complete"){
   		document.getElementById('loading').style.display = 'none';
+  		document.getElementById('tran-one-title').style.bottom = '25%';
+    	document.getElementById('tran-one-content').style.bottom = '15%';
   	}
   }
   var swiper = new Swiper('.swiper-container', {
@@ -65,10 +67,6 @@
     //滑动结束时
     onSlideChangeEnd:function(){
     	cssTrainsition(swiper.activeIndex);
-    },
-    onInit:function(){
-    	document.getElementById('tran-one-title').style.bottom = '25%';
-    	document.getElementById('tran-one-content').style.bottom = '15%';
     }
   });
   function toPage(index){
