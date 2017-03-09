@@ -1,1 +1,1 @@
-function hello(){var o="hello,world";document.open(),document.write(o),document.close()}
+function cssTrainsition(t){0==t?(document.getElementById("tran-one-title").style.bottom="25%",document.getElementById("tran-one-content").style.bottom="15%"):(document.getElementById("tran-one-title").style.bottom="100%",document.getElementById("tran-one-content").style.bottom="-10%")}

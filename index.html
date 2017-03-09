@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Fjornan's Website</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/swiper.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/style.css">
+
+	<script type="text/javascript" src="./dist/js/swiper.min.js"></script>
 </head>
 <body>
-<p>hello</p>
+<!-- Swiper -->
+<div id="loading">
+	<img src="./assets/img/loading.gif">
+</div>
+	<header class="head-contain">
+		<ul>
+			<li><a onclick="toPage(0)">首 页</a></li>
+			<li><a onclick="toPage(1)">简 历</a></li>
+			<li><a onclick="toPage(2)">项 目</a></li>
+			<li><a onclick="toPage(3)">联 络</a></li>
+		</ul>
+	</header>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" >
+    		<div id="page-one">
+    			<h1 id="tran-one-title">Welcome !</h1>
+    			<h2 id="tran-one-content">Fjornan's Website</h2>
+    		</div>
+      </div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
 
+  <!-- Swiper JS -->
+  <script src="./dist/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+  document.onreadystatechange = loading;
+  function loading(){
+  	if(document.readyState == "complete"){
+  		document.getElementById('loading').style.display = 'none';
+  	}
+  }
+  var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    direction: 'vertical',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 0,
+    mousewheelControl: true,
+    speed:500,
+    //滑动开始时
+    onSlideChangeStart:function(){
+    	var index = swiper.activeIndex;
+    	if(index!=0){
+    		document.getElementsByTagName('header')[0].style.backgroundColor="#3f3f3f";
+    	}
+    },
+    //滑动结束时
+    onSlideChangeEnd:function(){
+    	cssTrainsition(swiper.activeIndex);
+    },
+    onInit:function(){
+    	document.getElementById('tran-one-title').style.bottom = '25%';
+    	document.getElementById('tran-one-content').style.bottom = '15%';
+    }
+  });
+  function toPage(index){
+		swiper.slideTo(index);
+	}
+  </script>
 </body>
 <script type="text/javascript" src="./dist/js/common.js"></script>
 </html>
