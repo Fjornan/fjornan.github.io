@@ -4,13 +4,16 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),//出错后不停止
     autoprefixer = require('gulp-autoprefixer'),//自动加上浏览器前缀，如-webkit，-ms
     livereload = require('gulp-livereload'),//自动刷新浏览器，需安装liverload插件
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify');//js压缩
+    cssmin = require('gulp-minify-css');//css压缩
+
 
 gulp.task('less', function() {
     gulp.src('src/less/*.less')
     	.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
         .pipe(less())
         .pipe(autoprefixer())
+        .pipe(cssmin())
         .pipe(gulp.dest('./dist/css'))
         .pipe(livereload());
 });
