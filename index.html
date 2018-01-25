@@ -2,8 +2,9 @@
 <html>
 <head>
 	<title>Fjornan's Website</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <meta content="冯嘉楠,Fjornan,信笺,前端工程师" name="keywords">
+  <meta content="冯嘉楠,fjornan,信笺,前端工程师" name="keywords">
 
 	<link rel="stylesheet" type="text/css" href="dist/css/swiper.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/style.css">
@@ -38,8 +39,23 @@
       	</div>
       </div>
       <div class="swiper-slide">
-        <div >
-          
+        <div id="project">
+          <h1>开发过的企业项目</h1>
+          <ul class="project-list">
+            <li class="col-md-6">
+              <img src="assets/img/parkin-front.jpg">
+            </li>
+            <li class="col-md-6">
+              <img src="assets/img/parkin-homepage.jpg">
+            </li>
+            <li class="col-md-6">
+              <img src="assets/img/kinon-homepage.jpg">
+            </li>
+            <li class="col-md-6">
+              <img src="assets/img/kyndc.jpg">
+            </li>
+            <div class="clear"></div>
+          </ul>
         </div>
       </div>
       <div class="swiper-slide">
@@ -86,7 +102,7 @@
     <!-- Add Pagination -->
     <!-- <div class="swiper-pagination"></div> -->
   </div>
-
+  <div style="display: none;"> hello</div>
   <!-- Initialize Swiper -->
   <script type="text/javascript" src="./dist/js/swiper.min.js"></script>
   <script type="text/javascript" src="./dist/js/zepto.js"></script>
@@ -111,12 +127,12 @@
     //滑动开始时
     onSlideChangeStart:function(){
     	var index = swiper.activeIndex;
-    	if(index==1 || index==2){
-        $('header').css('background-color','#3f3f3f');
+    	// if(index==1 || index==2){
+     //    $('header').css('background-color','rgba(0,0,0,0.8)');
     		
-    	}else{
-        $('header').css('background-color','rgba(255,255,255,0.2)');
-    	}
+    	// }else{
+     //    $('header').css('background-color','rgba(255,255,255,0.2)');
+    	// }
     },
     //滑动结束时
     onSlideChangeEnd:function(){
